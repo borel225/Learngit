@@ -1,0 +1,806 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Les détails d'une information récente du ministre de l'éducation nationale et de l'Alphabétisation" />
+    <meta name="keywords" content="flashinfo, education, alphabétisation" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' />
+    <link rel="shortcut icon" href="https://www.education.gouv.ci/assets/image/General/drapeau.ico"
+        type="image/x-icon" />
+    <link href="https://www.education.gouv.ci/assets/css/bootstrap-4.6.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.education.gouv.ci/assets/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://www.education.gouv.ci/assets/css/style.css" rel="stylesheet">
+    <link href="https://www.education.gouv.ci/assets/css/caroussel.css" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://www.education.gouv.ci/assets/javascript/jquery-3.6.1/jquery-3.6.1.slim.min.js"></script>
+    <script type="text/javascript"
+        src="https://www.education.gouv.ci/assets/javascript/bootstrap-4.6.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://www.education.gouv.ci/assets/javascript/bootstrap-4.6.2/js/bootstrap.bundle.js"></script>
+    <title>Flashinfo|MENA</title>
+    <style>
+        .vert .carousel-item-next.carousel-item-left,
+        .vert .carousel-item-prev.carousel-item-right {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .vert .carousel-item-next,
+        .vert .active.carousel-item-right {
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100% 0);
+        }
+
+        .vert .carousel-item-prev,
+        .vert .active.carousel-item-left {
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+
+        #carouselExampleControls .carousel-control-prev,
+        #carouselExampleControls .carousel-control-next {
+            width: 20px;
+            height: 20px;
+            margin-top: -20px;
+            opacity: .8;
+            border: solid #999 1px;
+        }
+
+        #carouselExampleControls .carousel-control-prev {
+            left: unset;
+            right: 20px;
+        }
+
+        .circle {
+            border-radius: 50%;
+            margin: 0.01em;
+            font-size: 1.1em;
+        }
+
+        .fa-twitter {
+            background: #4099FF;
+            color: #FFFFFF;
+            padding: 0.06em 0.2em;
+        }
+
+        .fa-envelope {
+            background: #4099FF;
+            color: #FFFFFF;
+            padding: 0.06em 0.2em;
+        }
+
+        .fa-facebook {
+            background: #4099FF;
+            color: #FFFFFF;
+            padding: 0.06em 0.3em;
+        }
+
+        body {
+            min-width: 1075px;
+            z-index: 9999999;
+            color: #000000;
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.1em;
+
+        }
+
+        .container-fluid {
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        #piv {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        #pivLogo {
+            flex: 0 0 25%;
+            min-width: 160px;
+            max-width: 25%;
+            margin-left: 5px;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+        }
+
+        .navbar-dark {
+            font-size: 13px;
+            background-color: #fd7e14;
+        }
+
+        .px-2 {
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            border-radius: 0%;
+        }
+
+
+        #menu .submenu ul {
+            position: absolute;
+            width: 243px;
+            background: #f1f1f1;
+            z-index: 1000;
+            padding: 0;
+            min-height: 0;
+        }
+
+        #menu .submenu ul li a {
+            display: block;
+            font-size: 1em;
+            color: black;
+            font-family: sans-serif;
+            padding-left: 10px;
+
+            text-decoration: none;
+        }
+
+        nav>ul li:hover .secondlevel {
+            display: block;
+        }
+
+        .secondlevel {
+            display: none;
+            box-shadow: 0px 1px 2px #CCC;
+            box-shadow: inset;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+        }
+
+
+        .secondlevel li {
+            float: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .secondlevel a {
+            padding: 10px;
+            border-bottom: none;
+        }
+
+        .secondlevel a:hover {
+            border-bottom: none;
+            background-color: #CCC;
+        }
+
+        nav ul li {
+            float: left;
+            position: relative;
+            text-align: left;
+        }
+
+        nav ul::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        nav a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            border-bottom: 2px solid transparent;
+            padding: 10px 0px;
+        }
+
+        .submenu :hover {
+            background-color: #ECECEC;
+        }
+
+        .submenu {
+            float: left;
+            borders: thin solid;
+        }
+
+        img {
+            object-fit: cover;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+            color: red;
+        }
+
+        @keyframes blinker {
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-0 bg-muted mx-0">
+        <!-- la barre nous joindre!-->
+        <div class="clearfix">
+            <ul class="nav justify-content-start float-left">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Nous suivre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com/Educationci/" target="_blank"><i
+                            class="fa fa-twitter circle"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-primary" href="https://web.facebook.com/educationcotedivoire/"
+                        target="_blank"><i class="fa fa-facebook circle"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-primary" href="https://www.education.gouv.ci/index.php/Welcome/courriel"><i
+                            class="fa fa-envelope circle"></i></a>
+                </li>
+            </ul>
+            <div class="bg-success mx-auto float-right p-1 font-weight-bold h7" style="font-size:1.2em">
+                <i class="fa fa-angle-right fa-1x col-1 bg-warning p-1 font-weight-bold"
+                    style="font-size:1.1em"></i><span class="col text-white">927690 vues</span>
+            </div>
+        </div>
+        <!-- Fin la barre nous joindre!-->
+        <!-- barre des logos!-->
+        <header style="background:repeat url(https://www.education.gouv.ci/assets/image/Ministere/Logo/bg_head.jpg")
+            class="row container-fluid border">
+            <div class="mt-1 ml-1" style="width:27%">
+                <img class="card-img embed-responsive-item" style="opacity:.8;"
+                    src="https://www.education.gouv.ci/assets/image/Ministere/Logo/ministere_1.jpg" />
+            </div>
+            <div class="mt-2" style="width:6%">
+                <img class="card-img embed-responsive-item" style="opacity:.8;"
+                    src="https://www.education.gouv.ci/assets/image/General/flash-info.png">
+            </div>
+            <div class="mt-2" style="width:59%">
+                <div class="container bg-white pl-1" style="opacity:.8; width:720px; height:90px">
+                    <div id="carouselExampleControls" class="carousel vert slide" data-ride="carousel"
+                        data-interval="10000">
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5 class="font-weight-bold m-0 text-uppercase row"><a
+                                                href="https://www.education.gouv.ci/index.php/Flash/details/20">LES
+                                                RESULTATS DU BEPC 2024 SONT DISPONIBLES</a></h5>
+                                        <div class="float-left col-1 m-0 p-0 "><img class="blink w-100"
+                                                style="opacity:1"
+                                                src="https://www.education.gouv.ci/assets/image/General/new.png" />
+                                        </div>
+                                        <div class="col">
+                                            <p class="small mb-0 font-weight-bold" style="color:#fd7e14">18/06/2024</p>
+                                            <p class="text-justify small font-weight-bold">Les résultats du BEPC session
+                                                2024 sont disponibles sur le site web de la DECO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-1 mr-1" style="width:7%">
+                <img class="card-img" src="https://www.education.gouv.ci/assets/image/General/armoiries.jpg"
+                    height="100px" alt="armoirie">
+            </div>
+        </header>
+
+        <!-- Fin la barre des logos!-->
+        <!-- Debut la barre des menus!-->
+        <nav id="menu" role="navigation" class="navbar navbar-expand-lg navbar-dark justify-content-center sticky-top">
+            <!-- Brand -->
+            <ul class="list-inline m-0">
+                <li class="submenu list-inline-item mr-0" style="width:3%">
+                    <button class="btn px-2">
+                        <a class="p-0 ml-0 text-reset text-decoration-none"
+                            href="https://www.education.gouv.ci/index.php/Welcome/index"><i
+                                class="fa fa-home pt-1"></i></a>
+                    </button>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:8%">
+                    <button class="btn px-2">
+                        MINISTERE
+                    </button>
+                    <ul aria-expanded="false" class="secondlevel list-unstyled">
+                        <li><a href="https://www.education.gouv.ci/index.php/Ministere/ministre">Ministre</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Ministere/cabinet">Equipe du cabinet</a>
+                        </li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Ministere/igen">Inspection générale</a>
+                        </li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Ministere/service">Services rattachés</a>
+                        </li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Ministere/organigramme">organigramme</a>
+                        </li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Ministere/mission">Missions</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Ministere/oldministre">Anciens
+                                ministres</a></li>
+
+                    </ul>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:8%">
+                    <button class="btn px-2">
+                        DIRECTIONS
+                    </button>
+                    <ul aria-expanded="false" class="secondlevel list-unstyled">
+                        <li><a href="https://www.education.gouv.ci/index.php/Direction/directions">Directions
+                                centrales</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Direction/regionale">Directions
+                                régionales</a></li>
+                    </ul>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:8.5%">
+                    <button class="btn px-2">
+                        <a class="p-0 ml-0 text-reset text-decoration-none"
+                            href="https://www.education.gouv.ci/index.php/Activite/activites">ACTUALITES</a>
+                    </button>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:7.6%">
+                    <button class="btn px-2">
+                        eSERVICE
+                    </button>
+                    <ul aria-expanded="false" class="secondlevel list-unstyled">
+                        <li><a href="https://www.education.gouv.ci/index.php/Eservice/eleves">Effectifs</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Eservice/examens">Examens scolaires</a>
+                        </li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Eservice/concours">Concours
+                                pédagogiques</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Eservice/personnels">Gestion du
+                                personnel</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Eservice/resultats">Resultats d'examens et
+                                concours</a></li>
+                    </ul>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:13.4%">
+                    <button class="btn px-2">
+                        SYSTEME EDUCATIF
+                    </button>
+                    <ul aria-expanded="false" class="secondlevel list-unstyled">
+                        <li><a href="https://www.education.gouv.ci/index.php/Reseaux/dossier">Grands dossiers</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Reseaux/gouvernance">Gouvernance
+                                scolaire</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Reseaux/enseignement">Enseignement</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Reseaux/etablissement">Etablissements
+                                scolaires</a></li>
+                        <li><a
+                                href="https://www.education.gouv.ci/index.php/Reseaux/alphabetisation">Alphabétisation</a>
+                        </li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Reseaux/enseignant">Enseignants</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Reseaux/eleve">Elèves</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Reseaux/sociaux">Partenaires sociaux</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:9.3%">
+                    <button class="btn px-2">
+                        <a class="p-0 ml-0 text-reset text-decoration-none"
+                            href="https://www.education.gouv.ci/index.php/Evenement/evenements">EVENEMENTS</a>
+                    </button>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:9%">
+                    <button class="btn px-2">
+                        DOCUMENTS
+                    </button>
+                    <ul aria-expanded="false" class="secondlevel list-unstyled">
+                        <li><a href="https://www.education.gouv.ci/index.php/Document/textes">Textes officiels</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Document/prestations">Prestations et
+                                Services</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Document/orientation">Politique et
+                                Orientation</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Document/planification">Planification</a>
+                        </li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Document/bilan">Bilan organique</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Document/depenses">Marchés publics</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Document/finances">Finances Publiques</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:10%">
+                    <button class="btn px-2">
+                        MEDIATHEQUE
+                    </button>
+                    <ul aria-expanded="false" class="secondlevel list-unstyled">
+                        <li><a href="https://www.education.gouv.ci/index.php/Photo">Galérie photos</a></li>
+                        <li><a href="https://www.education.gouv.ci/index.php/Video">Vidéothèque</a></li>
+                    </ul>
+                </li>
+                <li class="submenu list-inline-item mr-0" style="width:4.8%">
+                    <button class="btn px-2">
+                        <a class="p-0 ml-0 text-reset text-decoration-none"
+                            href="https://www.education.gouv.ci/index.php/Faq">FAQS</a>
+                    </button>
+                </li>
+                <li class="submenu list-inline-item" style="width:18.3%">
+                    <form action="https://www.education.gouv.ci/index.php/Recherche/rechercher" name="myForm"
+                        class="form-inline my-2 my-lg-0" method="post" accept-charset="utf-8">
+                        <input type="search" name="theme" value="" required="required" placeholder="Rechercher..."
+                            aria-label="Recherche" class="form-control mr-sm-2 d-inline-block"
+                            style="width:194px;height:30px;" />
+                    </form>
+                </li>
+            </ul>
+        </nav>
+        <!-- Fin la barre des menus!-->
+        <div class="card mr-1 mt-2 float-right d-none  " id="encadre" style="width: 23%; height:100%">
+            <h6 class="text-uppercase text-danger font-weight-bold mx-2">le ministre</h6>
+            <div class="card-img p-2">
+                <img class="card-img-top"
+                    src="https://www.education.gouv.ci/assets/image/Ministere/Ministre/mariatou_1.png" alt="logo">
+                <label class="container-fluid text-center">Professeur MARIATOU KONE</label>
+            </div>
+            <div class="card-body">
+                <a href="https://www.education.gouv.ci/index.php/Ministere/discours"
+                    class="btn btn-primary btn-sm btn-block">Mot du ministre</a>
+                <a href="https://www.education.gouv.ci/index.php/Ministere/discours"
+                    class="btn btn-primary btn-sm btn-block">Discours et déclarations</a>
+                <a href="https://www.education.gouv.ci/index.php/Ministere/ministre"
+                    class="btn btn-primary btn-sm btn-block">Biographie</a>
+            </div>
+        </div>
+    </div>
+    <!--Fin barre des menus-->
+    <div class="overflow-hidden">
+        <section class="p-0 container-fluid" style="min-height:590px; width:100%">
+            <div class="row mx-1">
+                <!DOCTYPE html
+                    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                <html xmlns="http://www.w3.org/1999/xhtml">
+
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                    <title>Document sans titre</title>
+                    <style>
+                        .rounded {
+                            text-shadow: 1px 2px 3px black;
+                        }
+                    </style>
+                </head>
+
+                <body>
+                    <div class="col-md-12 mt-3">
+                        <h4 class="text-left text-uppercase text-success font-weight-bold mt-2">LES RESULTATS DU BEPC
+                            2024 SONT DISPONIBLES</h4>
+                        <hr class="float-left bg-warning mt-0 mb-0 font-weight-bold"
+                            style="height: 2.5px; width: 5%;" />
+                        <div class="mt-4">
+                            <hr class="bg-dark" />
+                            <p class="small text-secondary text-right pr-2"><i class="fa fa-clock-o text-primary"></i>
+                                publié le 18 June 2024</p>
+                            <hr class="bg-dark" />
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <p>Les résultats de l'examen du BEPC session 2024 sont disponibles sur le site web de la DECO ce
+                            Mardi 18 juin 2024. Pour consulter son résultat suivre le lien ci-dessous à partir de 14H00.
+                        </p><a class="btn btn-success"
+                            href="https://agce.exam-deco.org/edit/resultats-examen-bepc-2024/" target="_blank">Cliquer
+                            ici pour consulter</a>
+                        <div class="text-right rounded rounded">
+                            <a class="btn btn-info" href="https://www.education.gouv.ci/index.php/Welcome">Retour</a>
+                        </div>
+                    </div>
+
+                </body>
+
+                </html>
+            </div>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer pt-1">
+        <!--Debut bannière -->
+        <div class="row container-fluid text-center bg-success py-3">
+            <div class="col">
+                <script language='JavaScript' type='text/javascript' src='https://banniere.gouv.ci/adx.js'></script>
+                <script language='JavaScript' type='text/javascript'>
+
+                    if (!document.phpAds_used) document.phpAds_used = ',';
+                    phpAds_random = new String(Math.random()); phpAds_random = phpAds_random.substring(2, 11);
+
+                    document.write("<" + "script language='JavaScript' type='text/javascript' src='");
+                    document.write("https://banniere.gouv.ci/adjs.php?n=" + phpAds_random);
+                    document.write("&amp;what=zone:2");
+                    document.write("&amp;exclude=" + document.phpAds_used);
+                    if (document.referrer)
+                        document.write("&amp;referer=" + escape(document.referrer));
+                    document.write("'><" + "/script>");
+                </script><noscript><a href='https://banniere.gouv.ci/adclick.php?n=ac57ceb8' target='_blank'><img
+                            src='https://banniere.gouv.ci/adview.php?what=zone:8&amp;n=ac57ceb8' border='0'
+                            alt=''></a></noscript>
+            </div>
+            <div class="col">
+                <script language="JavaScript" type="text/javascript" src="https://banniere.gouv.ci/adx.js"></script>
+                <script language="JavaScript" type="text/javascript">
+
+                    if (!document.phpAds_used) document.phpAds_used = ',';
+                    phpAds_random = new String(Math.random()); phpAds_random = phpAds_random.substring(2, 11);
+
+                    document.write("<" + "script language='JavaScript' type='text/javascript' src='");
+                    document.write("https://banniere.gouv.ci/adjs.php?n=" + phpAds_random);
+                    document.write("&amp;what=zone:3");
+                    document.write("&amp;exclude=" + document.phpAds_used);
+                    if (document.referrer)
+                        document.write("&amp;referer=" + escape(document.referrer));
+                    document.write("'><" + "/script>");
+                </script><noscript><a href="https://banniere.gouv.ci/adclick.php?n=ac57ceb8" target="_blank"><img
+                            src="https://banniere.gouv.ci/adview.php?what=zone:8&amp;n=ac57ceb8" border="0"
+                            alt=""></a></noscript>
+            </div>
+        </div>
+        <!--Fin bannière -->
+
+        <!--Debut partenaires -->
+        <div class="clearfix mt-0" style="height:10rem; background-color:#D2D2A6">
+            <p class="h3 text-uppercase font-weight-bold float-left py-5 pl-1"
+                style="color:#fd7e14; width:25%;	text-shadow: 1px 2px 3px black">nos partenaires</p>
+            <div class="float-left" style="width:71%">
+                <div class="row mx-auto my-auto">
+                    <div id="recipeCarousel2" class="carousel slide w-100 " data-ride="carousel">
+                        <div class="carousel-inner w-100 vv-3" role="listbox">
+
+                            <div class="carousel-item active">
+                                <div class="col-md-2 p-1">
+                                    <img class="d-block img-fluid"
+                                        src="https://www.education.gouv.ci/assets/image/Finances/Partenaires/Logo/save the children.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-2 p-1">
+                                    <img class="d-block img-fluid"
+                                        src="https://www.education.gouv.ci/assets/image/Finances/Partenaires/Logo/undp.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-2 p-1">
+                                    <img class="d-block img-fluid"
+                                        src="https://www.education.gouv.ci/assets/image/Finances/Partenaires/Logo/bm.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-2 p-1">
+                                    <img class="d-block img-fluid"
+                                        src="https://www.education.gouv.ci/assets/image/Finances/Partenaires/Logo/UNICEF.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-2 p-1">
+                                    <img class="d-block img-fluid"
+                                        src="https://www.education.gouv.ci/assets/image/Finances/Partenaires/Logo/UNESCO.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <div class="col-md-2 p-1">
+                                    <img class="d-block img-fluid"
+                                        src="https://www.education.gouv.ci/assets/image/Finances/Partenaires/Logo/MCA-CI.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin les partenaires -->
+        <!-- Footer Links -->
+        <!-- Grid row -->
+        <div class="row m-0 container-fluid px-2" style="background-color:#363612">
+
+            <!-- Grid column -->
+            <div class="col-2 mt-3 p-0">
+
+                <h5 class="text-uppercase text-light">Contact</h5>
+                <table class="text-light p-0 ml-0">
+                    <tr>
+                        <td><a href="https://www.education.gouv.ci/index.php/Welcome/courriel"><i
+                                    class="fa fa-envelope"></i></a></td>
+                        <td>scda007@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-mobile fa-2x"></i></td>
+                        <td>(+225) 27 20 21 02 75</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-map-marker fa-2x"></i></td>
+                        <td>Abidjan Plateau<br />Cité administrative Tour D<br />16ème et 28ème étage<br /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a class="text-light" href="#"><i class="fa fa-youtube-play fa-lg"
+                                    aria-hidden="true"></i></a>
+                            <a class="mx-2 text-light" href="https://web.facebook.com/educationcotedivoire/"
+                                target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a>
+                            <a class="text-light" href="https://twitter.com/Educationci/" target="_blank"><i
+                                    class="fa fa-twitter fa-lg"></i></a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <!-- Grid column -->
+
+
+            <!-- Grid column -->
+            <div class="col-2 p-0 mt-3">
+                <!-- Links -->
+                <h5 class="text-uppercase text-light">ministère</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Ministere/ministre">Ministre</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Ministere/cabinet">Equipe du cabinet</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Ministere/organigramme">Organigramme</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Ministere/mission">Mission</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Ministere/service">Services rattachés</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Document/Orientation">Textes officiels</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Document/communiques">Communiqués</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Ministere/oldministre">Anciens ministres</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2 p-0 mt-3">
+                <!-- Links -->
+                <h5 class="text-uppercase text-light">directions</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Direction/directions">Direction centrale</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Direction/regionale">Direction régionale</a>
+                    </li>
+                </ul>
+                <h5 class="text-uppercase text-light">reseau scolaire</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Reseau/dossier">Grands dossiers</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Reseau/etablissement">Etablissements
+                            scolaires</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Reseau/enseignant">Enseignants</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Reseau/eleve">Elèves</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Reseau/sociaux">Partenaires sociaux</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-2 p-0 mt-3">
+                <h5 class="text-uppercase text-light"><a class="text-reset"
+                        href="https://www.education.gouv.ci/index.php/Activite/activites">actualités</a></h5>
+                <h5 class="text-uppercase text-light"><a class="text-reset"
+                        href="https://www.education.gouv.ci/index.php/Evenement/evenements">évènements</a></h5>
+                <h5 class="text-uppercase text-light">Documents</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Document/prestations">Prestations et
+                            services</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Document/orientation">Politique et
+                            orientation</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Document/planification">Planification</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Document/bilan">Bilan Organique</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Document/depenses">Marchés publics</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Document/finances">Finances publiques</a>
+                    </li>
+                </ul>
+                <!-- Links -->
+            </div>
+            <div class="col-2 p-0 mt-3">
+                <h5 class="text-uppercase text-light "><a class="text-reset">e-service</a></h5>
+
+                <ul class="list-unstyled">
+                    <li><a href="https://www.education.gouv.ci/index.php/Eservice/eleves">Effectifs</a></li>
+                    <li><a href="https://www.education.gouv.ci/index.php/Eservice/examens">Examens scolaires</a></li>
+                    <li><a href="https://www.education.gouv.ci/index.php/Eservice/concours">Concours pédagogiques</a>
+                    </li>
+                    <li><a href="https://www.education.gouv.ci/index.php/Eservice/personnels">Gestion du personnel</a>
+                    </li>
+                    <li><a href="https://www.education.gouv.ci/index.php/Eservice/resultats">Resultats</a></li>
+                </ul>
+                <h5 class="text-uppercase text-white">médiathèque</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Media/photo">Galérie photos</a>
+                    </li>
+                    <li>
+                        <a href="https://www.education.gouv.ci/index.php/Media/video">Vidéothèque</a>
+                    </li>
+                </ul>
+                <!-- Grid column -->
+            </div>
+            <div class="col-2 p-0 mt-3">
+                <h5 class="text-uppercase text-white"><a class="text-reset"
+                        href="https://www.education.gouv.ci/index.php/Faq">faq</a></h5>
+                <a href="https://www.education.gouv.ci/index.php/Welcome">
+                    <img class="card-img" src="https://www.education.gouv.ci/assets/image/General/armoiries.jpg"
+                        width="120px" height="120px" alt="armoirie">
+                    <span class="small text-light text-uppercase">ministère de l'éducation nationale et de
+                        l'alphabétisation</span>
+                </a>
+            </div>
+        </div>
+        <!-- Grid row -->
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="row bg-dark p-2 text-center m-0">
+            <div class="col-1 text-light text-left p-0">
+                Liens utiles
+            </div>
+            <a class="col text-success font-weight-bold" href="https://gouv.ci/" target="_blank">gouv.ci</a><a
+                class="col text-success font-weight-bold" href="https://eadministration.gouv.ci/"
+                target="_blank">eadministration.gouv.ci</a><a class="col text-success font-weight-bold"
+                href="https://annuaire.gouv.ci/" target="_blank">annuaire.gouv.ci</a><a
+                class="col text-success font-weight-bold" href="https://participationcitoyenne.gouv.ci/"
+                target="_blank">participationcitoyenne.gouv.ci</a><a class="col text-success font-weight-bold"
+                href="https://servicepublic.gouv.ci/" target="_blank">servicepublic.gouv.ci</a><a
+                class="col text-success font-weight-bold" href="https://opendata.gouv.ci/"
+                target="_blank">opendata.gouv.ci</a>
+        </div>
+        <div class="footer-copyright text-center py-3 text-white small text-uppercase"
+            style="background-color:#fd7e14;">COPYRIGHT © 2024-ministère de l'éducation nationale et de
+            l'alphabétisation-CÔTE D'IVOIRE
+        </div>
+        <!-- Copyright -->
+        </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+    <script language='JavaScript' type='text/javascript' src='https://banniere.gouv.ci/adx.js'></script>
+    <script type="text/javascript">
+        $('#recipeCarousel2.carousel .carousel-item').each(function () {
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+
+            for (var i = 0; i < 6; i++) {
+                next = next.next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+
+                next.children(':first-child').clone().appendTo($(this));
+            }
+        });
+    </script>
+</body>
+
+</html>
